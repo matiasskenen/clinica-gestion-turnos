@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <h3 class="text-center">Reservar Turno</h3>
+    <form>
+        <!-- Especialista -->
+        <div class="mb-3">
+            <label for="especialista" class="form-label">Especialista</label>
+            <input type="text" class="form-control" id="especialista" placeholder="{{especialistaSeleccionado}}" required disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="especialista" class="form-label">Especialidades</label>
+            <input type="text" class="form-control" id="especialista" placeholder="{{especialidadSeleccionado}}" required disabled>
+        </div>
+
+        <!-- Horario a elegir -->
+        <div class="mb-3">
+            <label for="horario" class="form-label">Horario del Especialista</label>
+            <input type="text" class="form-control" id="horario" required disabled placeholder="">
+            <br>
+            <label for="horario" class="form-label">Horario a elegir</label>
+            <input type="time" class="form-control" id="horario" required>
+        </div>
+
+        <!-- Día a elegir -->
+        <div class="mb-3">
+            <label for="horario" class="form-label">Dias Disponibles del Especialista</label>
+            <input type="text" class="form-control" id="horario" required disabled placeholder="LUNES, MIERCOLES, VIERNES">
+            <br>
+
+            <label for="dia" class="form-label">Día a elegir</label>
+            <input type="date" class="form-control" id="dia" required>
+        </div>
+
+        <!-- Botón de confirmación -->
+        <button type="submit" class="btn btn-primary w-100" (click)="sad()">Confirmar</button>
+    </form>
+</div>

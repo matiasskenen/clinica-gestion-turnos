@@ -1,0 +1,291 @@
+/* Contenedor principal */
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.lead-title {
+  background-color: #ffffff; /* Fondo blanco */
+  width: fit-content; /* Ajusta el ancho al contenido */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 24px; /* Tamaño de fuente grande */
+  font-weight: bold; /* Negrita para resaltar */
+  color: #007bff; /* Azul para el texto */
+  text-align: center; /* Centrar el texto */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  margin-bottom: 20px; /* Separación del resto del contenido */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación suave */
+}
+
+/* Estilo para filas: tarjetas en una fila horizontal */
+.custom-row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que se ajusten a la línea siguiente si no caben */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 20px; /* Espacio entre tarjetas */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo individual para las tarjetas */
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.custom-card {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.especialidad-card {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.especialidad-wrapper {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1200px; /* Tamaño máximo para el rectángulo */
+  min-height: 250px; /* Altura mínima del rectángulo */
+  margin: 20px auto; /* Centrado horizontal */
+  background-color: #f8f9fa; /* Fondo claro */
+  border: 2px solid #007bff; /* Borde azul */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  display: flex; /* Para organizar internamente */
+  justify-content: center; /* Centrar tarjetas horizontalmente */
+  align-items: center; /* Centrar tarjetas verticalmente */
+  gap: 20px; /* Espacio entre las tarjetas */
+  padding: 20px; /* Espaciado interno */
+}
+
+.especialidades-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 850px; /* Ancho de cada tarjeta */
+  height: 250px; /* Altura de cada tarjeta */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  padding: 10px; /* Espaciado interno */
+  text-align: center; /* Texto centrado */
+}
+
+.customes-card {
+  width: 100%; /* Ocupa todo el ancho de la tarjeta */
+  height: 500px; /* Ajusta la altura de la imagen */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: transform 0.3s ease; /* Animación al hacer hover */
+}
+
+
+
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 0 0 10px 10px;
+}
+
+
+/* Contenedor principal */
+.text-center {
+  text-align: center;
+}
+
+/* Encabezado */
+h3, h2 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #ffffff; /* Azul principal */
+  margin-bottom: 20px;
+}
+
+/* Contenedor de la selección de fecha */
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mx-3 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* Botones personalizados */
+.custom-btn {
+  background-color: #007bff; /* Azul principal */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+  cursor: pointer;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Efecto de zoom */
+}
+
+.custom-btn:active {
+  transform: scale(0.95); /* Efecto de clic */
+}
+
+/* Contenedor de turnos disponibles */
+.row {
+  margin: 0;
+  gap: 10px; /* Espaciado entre filas */
+}
+
+.col-12, .col-sm-6, .col-md-4, .col-lg-3 {
+  padding: 10px;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Encabezado de turnos disponibles */
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.text-info {
+  color: #f30f0f; /* Azul claro */
+}
+
+/* Fecha seleccionada */
+span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333; /* Gris oscuro */
+}
+
+
+/* Contenedor principal */
+.text-center {
+  text-align: center;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.text-resultado
+{
+  background-color: #fff;
+  width: 500px;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Título de confirmación */
+.text-success {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #28a745; /* Verde éxito */
+  margin-bottom: 20px;
+  font-size: 24px;
+
+}
+
+/* Información del turno */
+p {
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  color: #333333; /* Gris oscuro */
+  margin: 10px 0;
+}
+
+p strong {
+  color: #007bff; /* Azul para resaltar */
+  font-weight: bold;
+}
+
+/* Botón de confirmación */
+.custom-btn-confirm {
+  background-color: #28a745; /* Verde éxito */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+}
+
+.custom-btn-confirm:hover {
+  background-color: #218838; /* Verde más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Efecto de zoom */
+}
+
+.custom-btn-confirm:active {
+  transform: scale(0.95); /* Efecto de clic */
+}
+
+/* Estilo para centrar */
+.container-centered {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-color: #f5f5f5; /* Fondo claro para contraste */
+  padding: 20px; /* Espaciado alrededor */
+}
+
+/* Caja de resultado */
+.text-resultado {
+  background-color: #fff;
+  width: 500px;
+  padding: 20px; /* Espaciado interno */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  text-align: center; /* Centrar texto dentro del contenedor */
+}

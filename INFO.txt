@@ -1,0 +1,12 @@
+Agregar input imagenes en register.
+
+
+Agregar verificacion por mail y al momento de registrarse usar funcion de registrarfirebase con los inputs de los value forms /mail/clave para registrar en autetication.
+
+al regitrarse y poner especialidad validar que no use la misma en las dos...
+
+agregar guards
+
+verificacion a pacientes y especialista.cuando se registrab
+
+agregar imagenes

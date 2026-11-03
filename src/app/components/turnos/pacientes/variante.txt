@@ -1,0 +1,34 @@
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Mostrar los especialistas filtrados -->
+  <div *ngIf="nombresFiltrados.length > 0">
+      <h3 class="text-center mb-3">Especialistas Disponibles</h3>
+      <div class="row justify-content-center">
+          <div *ngFor="let especialista of nombresFiltrados" class="col-md-4 mb-3">
+              <div class="card shadow-sm" (click)="seleccionarEspecialista(especialista)">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">{{ especialista.nombre }}</h5>
+                      <p class="card-text">Especialidad: {{ especialista.especialidad }}</p>
+                      <span class="badge bg-success">Disponible</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Mostrar el componente de reserva cuando se ha seleccionado un especialista -->
+  <app-detalle-turno 
+      *ngIf="especialistaSeleccionado" 
+      [especialistaSeleccionado]="especialistaSeleccionado" 
+      [especialidadSeleccionado]="especialidadSeleccionado">
+  </app-detalle-turno>
+
+  <!-- Mensaje si no hay resultados -->
+  <div *ngIf="especialidadesFiltradas.length === 0 && nombresFiltrados.length === 0">
+      <p class="text-center">No se encontraron resultados.</p>
+  </div>
+</div>

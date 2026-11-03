@@ -1,0 +1,99 @@
+/* Asegura que la sección ocupe toda la pantalla */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Cabecera con el título */
+  .header {
+    margin-top: 50px;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Barra de navegación */
+  .navbar {
+    margin-top: 30px;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .custom-btn {
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Estilos para el botón "Mis Turnos" */
+  .primary-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .primary-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Estilos para el botón "Solicitar Turno" */
+  .success-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .success-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  /* Sección de información adicional */
+  .info-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .info-section p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Estilo para el footer */
+  .footer {
+    margin-top: 50px;
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    width: 100%;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  

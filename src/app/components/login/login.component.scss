@@ -1,0 +1,90 @@
+/* Fondo suave y card con sombra */
+.card {
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+
+
+/* Encabezado del formulario */
+.card-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #084381;  /* Color azul de la clínica */
+}
+
+/* Botón */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Estilo del error */
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: 500;
+}
+
+/* Estilo del formulario */
+input.form-control {
+  border-radius: 5px;
+  height: 45px;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+body {
+  background-color: #1f69aa;
+  height: 90vh;
+}
+
+
+/* Estilos para los botones de acceso rápido */
+.quick-access-buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -150px;
+  top: 0px;
+}
+
+.quick-access-btn {
+  width: 110px;
+  height: 60px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.quick-access-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo de la imagen de perfil */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Estilo del texto del rol de usuario */
+.user-role {
+  display: none;
+}
+
+/* Se puede mostrar el texto si es necesario */
+.quick-access-btn:hover .user-role {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+}
+

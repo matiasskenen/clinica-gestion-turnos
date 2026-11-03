@@ -1,0 +1,87 @@
+<div class="container mt-5">
+  <!-- Mi Perfil -->
+  <h2 class="text-center mb-4">Mi Perfil</h2>
+
+  <div *ngFor="let turno of nombresEspecialistasArray">
+    <ng-container *ngIf="turno.email == pacienteActual">
+      <div class="profile-image-container text-center">
+        <img src="{{ turno.imagen }}" class="profile-image" />
+      </div>
+
+      <div class="profile-info">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Información Personal</h5>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <strong>Nombre:</strong> {{turno.nombre}}
+              </li>
+              <li class="list-group-item">
+                <strong>Apellido:</strong> {{turno.apellido}}
+              </li>
+              <li class="list-group-item">
+                <strong>Edad:</strong> {{turno.edad}}
+              </li>
+              <li class="list-group-item">
+                <strong>DNI:</strong> {{turno.dni}}
+              </li>
+            </ul>
+
+            <div class="text-center mt-4">
+              <label for="especialidad">Seleccionar Especialidad:</label>
+              <select id="especialidad" [(ngModel)]="especialidadElegidaUser" class="form-control">
+                <option value="Cardiología">Cardiología</option>
+                <option value="Dermatología">Dermatología</option>
+                <option value="Pediatría">Pediatría</option>
+                <option value="Todas">Todas</option>
+              </select>
+
+              <button class="btn-download mt-4" (click)="descargarHistoriaClinica()">Descargar PDF Historia Clínica</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Pacientes Atendidos -->
+<div *ngIf="historiaClinicaSeleccionada && historiaClinicaSeleccionada.length > 0" class="history">
+  <h2 class="title text-center my-4">Historia Clínica</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered text-center align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Fecha</th>
+          <th>Altura</th>
+          <th>Peso</th>
+          <th>Presión</th>
+          <th>Temperatura</th>
+          <th>Doctor</th>
+          <th>Datos Adicionales</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let historia of historiaClinicaSeleccionada">
+          <ng-container *ngIf="pacienteActual == historia.paciente">
+            <td>{{ historia.fecha }}</td>
+            <td>{{ historia.altura }} cm</td>
+            <td>{{ historia.peso }} kg</td>
+            <td>{{ historia.presion }}</td>
+            <td>{{ historia.temperatura }} °C</td>
+            <td>{{ historia.emailEspecialsita }}</td>
+            <td>
+              <ul class="list-unstyled mb-0">
+                <li *ngFor="let dato of historia.datosDinamicos">
+                  <strong>{{ dato.titulo }}:</strong> {{ dato.valor }}
+                </li>
+              </ul>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+</div>

@@ -1,0 +1,123 @@
+.tarjetas
+{
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+
+
+/* Contenedor principal */
+.container {
+  height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Título principal */
+  .title {
+    font-size: 24px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Campo de búsqueda */
+  .search-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* Lista de turnos */
+  .turnos-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .turno-item {
+    height: auto;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .turno-actions
+  {
+    height: auto;
+  }
+
+  .turno-content {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .turno-title {
+    font-size: 18px;
+    color: #3498db;
+    margin-bottom: 5px;
+  }
+  
+  .turno-details {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  /* Botones */
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .pending-btn {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .pending-btn:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  /* Información del turno */
+  .turno-info {
+    margin-top: 10px;
+  }
+  
+  .turno-label {
+    display: block;
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  
+  /* Alerta de turno no disponible */
+  .alert {
+    background-color: #fef7e0;
+    color: #b78e28;
+    border: 1px solid #f9e5b3;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  

@@ -1,0 +1,50 @@
+<div class="estadisticas-container">
+  <h1>Estadísticas</h1>
+
+    <button (click)="downloadPDF()">Descargar PDF</button>
+    <button (click)="downloadExcel()">Descargar Excel</button>
+    <div id="logs-section">
+      <h2>Logs</h2>
+  
+
+      <div id="logs-usuarios" class="logs-container">
+        <h3>Logs de Usuarios</h3>
+        <ul>
+          <li *ngFor="let log of logsUsuarios">{{ log }}</li>
+        </ul>
+      </div>
+  
+  
+  </div>
+  
+
+  <div id="charts-section">
+    <h2>Gráficos</h2>
+
+
+    <div id="chart-especialidad" class="chart-container">
+      <h3>Turnos por Especialidad</h3>
+      <p-chart type="pie" [data]="chartDataEspecialidad" [options]="chartOptions"></p-chart>
+    </div>
+
+
+
+    <div id="chart-turnos" class="chart-container">
+      <h3>Turnos por Día</h3>
+      <p-chart type="line" [data]="chartDataTurnos" [options]="chartOptions"></p-chart>
+    </div>
+
+
+    <div id="chart-medicos" class="chart-container">
+      <h3>Turnos por Médico</h3>
+      <p-chart type="pie" [data]="chartDataMedicos" [options]="chartOptions"></p-chart>
+    </div>
+
+
+    <div id="chart-turnos-finalizados" class="chart-container">
+      <h3>Turnos Finalizados por Médico</h3>
+      <p-chart type="bar" [data]="chartDataTurnosFinalizados" [options]="chartOptions"></p-chart>
+    </div>
+</div>
+
+

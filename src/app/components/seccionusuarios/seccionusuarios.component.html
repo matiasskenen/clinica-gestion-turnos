@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h4>Gestión de Usuarios</h4>
+      <!-- Botón para descargar Excel -->
+      <button class="btn btn-success" (click)="descargarExcel()">Descargar Excel</button>
+    </div>
+    <div class="card-body">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let especialista of nombresFiltrados; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ especialista.nombre }}</td>
+            <td>{{ especialista.email }}</td>
+            <td>
+              <span [class.activo]="especialista.verificado" [class.inactivo]="!especialista.verificado">
+                {{ especialista.verificado ? 'Activo' : 'Inactivo' }}
+              </span>
+            </td>
+            <td>
+              <button *ngIf="especialista.verificado" class="btn-warning" (click)="modificarVerificado('deshabilitar', especialista.nombre)">
+                Deshabilitar
+              </button>
+              <button *ngIf="!especialista.verificado" class="btn-success" (click)="modificarVerificado('habilitar', especialista.nombre)">
+                Habilitar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col" *ngFor="let paciente of pacientesFiltrados">
+      <div class="card">
+        <img [src]="paciente.imagen" alt="Imagen de {{ paciente.nombre }}" />
+        <div class="card-body">
+          <h5>{{ paciente.nombre + ' ' + paciente.apellido }}</h5>
+          <p>
+            <strong>DNI:</strong> {{ paciente.dni }}<br />
+            <strong>Edad:</strong> {{ paciente.edad }} años
+          </p>
+          <button class="btn-primary" (click)="ddescargarHistoriaClinica(paciente.email)">Descargar Turno</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

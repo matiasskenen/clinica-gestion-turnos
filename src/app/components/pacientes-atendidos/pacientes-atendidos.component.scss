@@ -1,0 +1,84 @@
+/* Asegura que el body ocupe toda la pantalla */
+body {
+    background-color: rgb(108, 207, 247);
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Contenedor principal para llenar toda la pantalla */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Estilos para los títulos */
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para las tablas */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Botón personalizado */
+  .btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para la imagen */
+  .img-thumbnail {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  /* Sección de Historia Clínica */
+  .history {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para los elementos adicionales */
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+  }
+  

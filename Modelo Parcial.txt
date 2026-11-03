@@ -1,0 +1,9 @@
+ng new modeloParcial
+npm install -g firebase-tools
+firebase login
+firebase init hosting
+enter-public
+y
+n
+
+firebase deploy --only hosting

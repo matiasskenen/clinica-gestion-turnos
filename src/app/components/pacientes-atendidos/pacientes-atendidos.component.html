@@ -1,0 +1,68 @@
+<body>
+  <div class="container">
+    <h1 class="title">Pacientes Atendidos</h1>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let paciente of nombresEspecialistasArray">
+        <div class="card mb-4 shadow-sm">
+          <img src="{{ paciente.imagen }}" class="card-img-top" alt="Imagen de {{ paciente.nombre }}" />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ paciente.nombre + ' ' + paciente.apellido }}
+            </h5>
+            <p class="card-text">
+              <strong>DNI:</strong> {{ paciente.dni }} <br />
+              <strong>Edad:</strong> {{ paciente.edad }} años
+            </p>
+            <h6>Últimos 3 turnos:</h6>
+            <ul>
+              <li *ngFor="let turno of paciente.fechadiasArray">
+                {{ turno }}
+              </li>
+            </ul>
+            <button class="btn btn-primary btn-sm mt-2" (click)="mostrarHistoriaClinica(paciente.email)">
+              Ver Historia Clínica
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="historiaClinicaSeleccionada && historiaClinicaSeleccionada.length > 0" class="history">
+      <h2 class="title">
+        Historias Clínicas de {{ historiaClinicaSeleccionada[0].paciente }}
+      </h2>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Altura</th>
+              <th>Peso</th>
+              <th>Presión</th>
+              <th>Temperatura</th>
+              <th>Doctor</th>
+              <th>Datos Adicionales</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let historia of historiaClinicaSeleccionada">
+              <td>{{ historia.dia }}</td>
+              <td>{{ historia.altura }} cm</td>
+              <td>{{ historia.peso }} kg</td>
+              <td>{{ historia.presion }}</td>
+              <td>{{ historia.temperatura }} °C</td>
+              <td>{{ historia.doctor }}</td>
+              <td>
+                <ul>
+                  <li *ngFor="let dato of historia.datosDinamicos">
+                    <strong>{{ dato.titulo }}:</strong> {{ dato.valor }}
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

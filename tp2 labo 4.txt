@@ -1,0 +1,44 @@
+asignar especialidad mas de una
+admin y veo los usuarios:
+habilitar o desabilitar un especialista, no se puede logear al estar desabilitado.
+cuando arranca el especialista arranca desabilitado.
+
+en el home, tiene que estar desabilitado y un mensaje en home.
+
+especilista mail verificado y por el admin.
+
+auth guardar el id en la collecion
+
+isemailverify
+
+dos imagenes con el id del usuario o url guardado en la collecion
+
+
+
+
+sprint 2
+captcha en el registro.
+un readme (leer enunciado) en github.
+
+seccion mis turnos:
+
+paciente: guard pacientes)
+todos los turnos relacionados de el: terminados o pendientes.
+filtro por especialidad de sus turnos) (con un input de texto) filter (Averiguar) sobre el array.
+
+opcion de cancelar, solo si esta pendiente.
+se abre una opcion de dejar un comentario (hijo componente)
+dejar califiacion.
+
+
+encuesta si el turno finalizo hacia el paciente
+
+
+especialista:
+por especialidad y paciente filtro
+cancelar turno y un comentario.
+
+
+va a haber mas clases
+
+un componente admin

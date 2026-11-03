@@ -1,0 +1,281 @@
+/* Estilo general */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.chat-container {
+  width: 300px;
+  height: 400px;
+  border: 2px solid #0078d7;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.chat-header {
+  background-color: #0078d7;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f7f7f7;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message.customer {
+  background-color: #0078d7;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+.message.support {
+  background-color: #e0e0e0;
+  color: #333333;
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+
+/* Estilo general para la sección de ayuda */
+.help-section {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.help-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #0078d7;
+  outline: none;
+}
+
+.help-topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.help-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.help-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.help-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0078d7;
+  margin-bottom: 10px;
+}
+
+.help-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #0078d7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chat-input button:hover {
+  background-color: #005bb5;
+}
+
+
+/* Banner de Bienvenida */
+.banner {
+  position: relative; /* Necesario para colocar el pseudo-elemento */
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/tplabo4final.firebasestorage.app/o/360_F_895018891_HPkMRmOSvHKr0irXm81T7KsoCuhUTXg9.jpg?alt=media&token=8d8d6258-a024-4f79-b570-944fd4a6ef1c");
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(1.2); /* Oscurecer la imagen, puedes ajustar el valor */
+}
+
+.banner::before {
+  content: ''; /* Pseudo-elemento vacío */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Fondo negro semi-transparente */
+  z-index: -1; /* Coloca la sombra detrás del contenido */
+}
+
+
+.banner-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 1.2em;
+}
+
+/* Botones */
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-outline-primary {
+  border: 2px solid #007bff;
+  color: #007bff;
+  background-color: transparent;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Sección de Servicios y Centro de Atención */
+.services-contact {
+  padding: 50px 20px;
+  background-color: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2em;
+  color: #007bff;
+}
+
+.sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.service, .contact {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.service h3, .contact h3 {
+  color: #007bff;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.card h4 {
+  margin: 0;
+  color: #007bff;
+}
+
+.card p {
+  margin: 5px 0 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .sections {
+      flex-direction: column;
+  }
+}

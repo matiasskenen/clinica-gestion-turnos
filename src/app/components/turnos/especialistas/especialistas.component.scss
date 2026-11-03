@@ -1,0 +1,184 @@
+.container
+{
+
+    width: 100%;
+    height: auto;
+}
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Fondo general claro */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+  
+/* Estilo para la contenedora general */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Título principal */
+h1.text-primary {
+  font-size: 2.5rem;
+  color: #007bff;
+}
+
+/* Campo de búsqueda */
+input[type="text"] {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Estilo para la lista de turnos */
+.list-group {
+  margin-top: 20px;
+}
+
+/* Estilo para los elementos de la lista */
+.list-group-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+/* Estilo para la información del turno */
+.list-group-item div h4 {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.list-group-item div p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.list-group-item div h2 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Estilo para los botones */
+button.btn {
+  margin: 5px;
+}
+
+button.btn-sm {
+  padding: 5px 10px;
+}
+
+button.btn-outline-success {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+button.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+button.btn-outline-success:hover,
+button.btn-outline-danger:hover {
+  background-color: #f8f9fa;
+}
+
+/* Estilo para los formularios dentro de cada turno */
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.p-3 {
+  padding: 1rem;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.border {
+  border: 1px solid #ccc;
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+.form-label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+textarea.form-control {
+  height: 150px;
+}
+
+/* Estilo para los rangos */
+.form-range {
+  width: 100%;
+}
+
+.form-check.form-switch {
+  display: inline-block;
+}
+
+.form-check-label {
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+/* Estilo para los botones dentro de los formularios */
+button.btn-sm.ms-2 {
+  margin-left: 10px;
+}
+
+/* Estilo para los formularios dinámicos */
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+button.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+button.btn-secondary:hover,
+button.btn-success:hover {
+  background-color: #f8f9fa;
+}

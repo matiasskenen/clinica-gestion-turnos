@@ -1,0 +1,97 @@
+<body>
+  <!-- Banner de Bienvenida -->
+  <header class="banner">
+    <div class="banner-content">
+      <h1>¡Bienvenido a Nuestra Clínica!</h1>
+      <p>
+        Nos complace ofrecerte atención médica de calidad con un equipo altamente capacitado. ¡Estamos aquí para cuidar de ti y tu familia!
+      </p>
+
+
+
+
+      <div class="d-flex justify-content-center gap-3" *ngIf="!user">
+        <label (click)="navigateTo('login')" class="btn btn-primary btn-lg px-4">Iniciar Sesión</label>
+        <label (click)="navigateTo('register')" class="btn btn-outline-primary btn-lg px-4">Registrarse</label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección de Servicios y Centro de Atención en dos columnas -->
+  <section class="services-contact">
+    <div class="section-header">
+      <h2>Servicios y Centro de Atención</h2>
+      <p>Descubre los servicios que ofrecemos y encuentra nuestro centro de atención.</p>
+    </div>
+    <div class="sections">
+      <!-- Servicios -->
+      <div class="service">
+        <h3>Servicios</h3>
+        <div class="card">
+          <h4>Consultas Generales</h4>
+          <p>Atención médica para todas las edades.</p>
+        </div>
+        <div class="card">
+          <h4>Urgencias</h4>
+          <p>Atención inmediata en caso de emergencia.</p>
+        </div>
+        <div class="card">
+          <h4>Exámenes Médicos</h4>
+          <p>Exámenes completos para mantener tu salud en óptimas condiciones.</p>
+        </div>
+      </div>
+      
+      
+
+      <!-- Centro de Atención -->
+      <div class="contact">
+        <h3>Centro de Atención</h3>
+        <p><strong>Dirección:</strong> Calle Ejemplo 123, Ciudad</p>
+        <p><strong>Teléfono:</strong> +123 456 7890</p>
+        <p><strong>Correo Electrónico:</strong> contacto.com</p>
+      </div>
+      <div appAuthCheck class="chat-container">
+        <div class="chat-header">
+          <h3>Atención al Cliente</h3>
+        </div>
+        <div class="chat-messages">
+          <div class="message customer">Hola, necesito ayuda.</div>
+          <div class="message support">¡Hola! ¿En qué puedo ayudarte?</div>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Escribe tu mensaje..." />
+          <button>Enviar</button>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section class="help-section">
+    <h2>Sección de Ayuda</h2>
+    
+    <!-- Buscador -->
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Busca un tema de ayuda..."
+        class="form-control"
+      />
+    </div>
+  
+    <!-- Lista de Temas de Ayuda -->
+    <div class="help-topics">
+      <div
+        class="help-card"
+        *ngFor="let topic of helpTopics | filtroAyuda:searchText:'title'"
+      >
+        <h3>{{ topic.title }}</h3>
+        <p>{{ topic.content }}</p>
+      </div>
+    </div>
+  </section>
+
+
+</body>

@@ -1,0 +1,128 @@
+<div class="container mt-5">
+  <!-- Título de la página -->
+  <h1 class="text-center mb-4">Configuración Perfil</h1>
+
+  <!-- Panel de configuración -->
+  <div class="row">
+    <!-- Contenido de configuración -->
+    <div class="col-md-9">
+      <div class="tab-content">
+        <!-- Configuración de cuenta -->
+        <div class="tab-pane fade show active" id="accountSettings">
+          <h3>Cuenta</h3>
+
+          <img src="{{imagenusuario}}">
+
+
+          <form>
+            <div class="mb-3">
+              <br>
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" disabled placeholder="{{user}}">
+
+              <label for="email" class="form-label">Nombre y Apellido</label>
+              <input type="email" class="form-control" id="email" disabled
+                placeholder="{{nombredoctor + ' ' + apellidodoctor}}">
+
+              <label for="email" class="form-label">Dni</label>
+              <input type="email" class="form-control" id="email" disabled placeholder="{{dni}}">
+
+            </div>
+
+            <div class="mb-3">
+              <label for="diasLaborales" class="form-label">Días Laborales</label>
+              <div id="diasLaborales" class="form-check">
+                <div *ngFor="let dia of diasLaborales">
+                  <input type="checkbox" class="form-check-input" [id]="dia" [value]="dia"
+                    (change)="actualizarDiasLaborales($event)" />
+                  <label class="form-check-label" [for]="dia">{{ dia }}</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" *ngIf="!diassellecionados && diasusuario == ''">
+              <label for="diasSeleccionados" class="form-label">Días Seleccionados</label>
+              <input type="text" class="form-control" id="diasSeleccionados" [value]="diasSeleccionados.join(', ')"
+                readonly />
+            </div>
+
+            <div class="mb-3" *ngIf="diasusuario != ''">
+              <label for="diasSeleccionados" class="form-label">Días Seleccionados</label>
+              <input type="text" class="form-control" id="diasSeleccionados" [value]="diasusuario.join(', ')"
+                readonly />
+            </div>
+
+
+            <div *ngIf="diasusuario != ''">
+              <button class="btn btn-primary" (click)="cambiarDiasLaborales()">Cambiar</button>
+            </div>
+
+            <div *ngIf="!diassellecionados && diasusuario == ''">
+              <button class="btn btn-primary" (click)="guardarDiasLaborales()">Guardar</button>
+            </div>
+
+
+          </form>
+        </div>
+        <br>
+        <div class="tab-pane fade show active" id="accountSettings">
+          <h3>Establecer Horario</h3>
+          <form>
+            <!-- Especialidades dinámicas -->
+            <div>
+              <div class="col-sm-10">
+
+                <label for="email" class="form-label">Ultimo Cambio:</label>
+                <input type="email" class="form-control" id="email" disabled placeholder="{{getHorario}}">
+                <br>
+
+                <select name="Departamente" (change)="changeDepartament($event)" class="form-control">
+                  <option>--Seleccionar--</option>
+                  <option *ngFor="let dep of DepartamentList">
+                    {{dep}}
+                  </option>
+                </select>
+                <br>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" (click)="saveDataHorario()">Guardar cambios</button>
+          </form>
+        </div>
+
+        <br>
+        <div class="tab-pane fade show active" id="accountSettings">
+          <h3>Establecer Imagenes</h3>
+          <form>
+            <!-- Especialidades dinámicas -->
+            <div>
+              <div class="col-sm-10">
+
+                <!-- SUBIR IMAGEN -->
+
+                <div>
+                  <label>{{especialidad1}}</label>
+                  <br>
+                  <label for="imagen1">Selecciona la primera imagen:</label>
+                  <input type="file" id="imagen1" (change)="onFileSelected($event, 'imagen1')" accept="image/*">
+                </div>
+                <br>
+                <div>
+                  <label>{{especialidad2}}</label>
+                  <br>
+                  <label for="imagen2">Selecciona la segunda imagen:</label>
+                  <input type="file" id="imagen2" (change)="onFileSelected($event, 'imagen2')" accept="image/*">
+                </div>
+                <br>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" (click)="sendAdmin()">Guardar cambios</button>
+          </form>
+        </div>
+        <br>
+
+      </div>
+    </div>
+  </div>
+</div>

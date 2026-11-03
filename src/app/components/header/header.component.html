@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+      <a class="navbar-brand" (click)="navigateTo('home')">Clinica Skenen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" (click)="navigateTo('home')">Home</a>
+              </li>
+              <li class="nav-item" *ngIf="perfil === 'paciente'">
+                  <a class="nav-link" (click)="navigateTo('turnoPaciente')">Turnos</a>
+              </li>
+              <li class="nav-item" *ngIf="perfil === 'especialista'">
+                  <a class="nav-link" (click)="navigateTo('turnosEspecialistas')">Mis Turnos</a>
+              </li>
+              <li class="nav-item" *ngIf="perfil === 'especialista'">
+                <a class="nav-link" (click)="navigateTo('pacientesAtendidos')">Mis Pacientes</a>
+                </li>
+              <li class="nav-item" *ngIf="perfil === 'admin'">
+                  <a class="nav-link" (click)="navigateTo('turnoAdmin')">Turnos</a>
+              </li>
+              <li class="nav-item" *ngIf="perfil === 'paciente'">
+                  <a class="nav-link" (click)="navigateTo('perfilPaciente')">Perfil</a>
+              </li>
+              <li class="nav-item" *ngIf="perfil === 'especialista'">
+                  <a class="nav-link" (click)="navigateTo('perfilEspecialista')">Perfil</a>
+              </li>
+              <li class="nav-item" *ngIf="perfil === 'admin'">
+                  <a class="nav-link" (click)="navigateTo('perfilAdmin')">Perfil</a>
+              </li>
+              <li class="nav-item" *ngIf="perfil === 'admin'">
+                  <a class="nav-link" (click)="navigateTo('seccionusuarios')">Sección Usuarios</a>
+              </li>
+              <li class="nav-item" *ngIf="perfil === 'admin'">
+                <a class="nav-link" (click)="navigateTo('estadisticas')">Estadisticas</a>
+            </li>
+              <li class="nav-item" *ngIf="user">
+                  <a class="nav-link" (click)="signOut()">Cerrar sesión</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>

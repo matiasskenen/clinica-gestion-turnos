@@ -1,0 +1,73 @@
+<body class="login-bg">
+  <div class="container">
+    <div class="row justify-content-center mt-2">
+      <div class="col-md-6">
+        <div class="card shadow-lg border-light mt-4">
+          <div class="card-body">
+            <h3 class="card-title text-center text-primary mb-4">Login Clínica</h3>
+
+            <!-- Formulario de Login -->
+            <form (ngSubmit)="loginUser()" #loginForm="ngForm">
+              <!-- Campo de Usuario -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Usuario</label>
+                <input
+                  type="text"
+                  id="email"
+                  class="form-control"
+                  required
+                  [(ngModel)]="email"
+                  name="email"
+                  placeholder="Introduce tu usuario"
+                />
+              </div>
+
+              <!-- Campo de Contraseña -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  required
+                  [(ngModel)]="password"
+                  name="password"
+                  placeholder="Introduce tu contraseña"
+                />
+              </div>
+
+              <!-- Botón de Login -->
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">Iniciar Sesión</button>
+              </div>
+
+              <!-- Mensajes de Error -->
+              <div *ngIf="flagError" class="alert alert-danger mt-3" role="alert">
+                {{ msjError }}.
+              </div>
+
+              <!-- Loader -->
+              <div class="loader-container" *ngIf="isLoading">
+                <span class="loader"></span>
+              </div>
+            </form>
+
+            <!-- Botones de Acceso Rápido (con imágenes de perfil) -->
+            <div class="quick-access-buttons">
+              <button (click)="autocompletar(user.name, '123456')" *ngFor="let user of users" class="quick-access-btn">
+
+                <img  [src]="user.image" alt="{{ user.name }}" class="profile-img">
+
+                <div class="user-role">{{ user.role }}</div>
+
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>

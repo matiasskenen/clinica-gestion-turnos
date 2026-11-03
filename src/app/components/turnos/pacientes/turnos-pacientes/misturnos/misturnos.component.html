@@ -1,0 +1,92 @@
+<div class="container">
+  <h1 class="title">Buscar Turnos</h1>
+
+  <!-- Campo de búsqueda -->
+  <input type="text" placeholder="Buscar turnos o historia clínica..." [(ngModel)]="searchText" class="search-box" />
+
+  <!-- Lista de Turnos Filtrados -->
+  <ul class="turnos-list">
+    <li *ngFor="let turno of nombresEspecialistasArray | filter: searchText" class="turno-item">
+      <div class="turno-content" *ngIf="turno.paciente === usuarioActual">
+        <div *ngIf="turno.estado !== 'eliminado'">
+          <h4 class="turno-title">{{ turno.especialidad }}</h4>
+          <p class="turno-details"><strong>{{ turno.especialista }}</strong> - {{ turno.horario }}</p>
+          <p>Estado:</p>  
+          <h2>{{ getEstadoTurno(turno.estado) }}</h2>
+        </div>
+        <div class="turno-actions">
+          <button *ngIf="turno.estado === 'aceptado'" class="btn cancel-btn" (click)="mostrarFormularioCancelar(turno)">
+            Cancelar
+          </button>
+          <button *ngIf="turno.estado === 'historiaClinica' && !calificar" class="btn pending-btn" (click)="mostrarFormularioCalificar(turno)">
+            Calificar
+          </button>
+          <button *ngIf="encuesta && turno.estado === 'historiaClinica'" class="btn pending-btn" (click)="mostrarFormularioEncuesta(turno)">
+            Encuesta
+          </button>
+        </div>
+        <div *ngIf="turno.estado === 'cancelado' || turno.estado === 'eliminado'" class="turno-info">
+          <label class="turno-label">Estado: {{ getEstadoTurno(turno.estado) }}</label>
+          <label class="turno-label">Comentario: {{ turno.comentarioPaciente }}</label>
+        </div>
+      </div>
+
+      <!-- Formulario de Historia Clínica -->
+      <div *ngIf="turno.mostrarFormularioEncuesta" class="mt-3 p-3 bg-light border rounded">
+        <h5 class="text-secondary">Ingresar Encuesta</h5>
+        <div class="mb-3">
+          <label for="alturaInput" class="form-label">Atención del doctor:</label>
+          <input type="number" id="alturaInput" [(ngModel)]="turno.atencion" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="pesoInput" class="form-label">Tiempo de Demora:</label>
+          <input type="number" id="pesoInput" [(ngModel)]="turno.Demora" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="temperaturaInput" class="form-label">Limpieza del Consultorio:</label>
+          <input type="number" id="temperaturaInput" [(ngModel)]="turno.Limpieza" class="form-control"/>
+        </div>
+
+        <button class="btn btn-success btn-sm" (click)="ingresarEncuesta(turno.atencion, turno.Demora, turno.Limpieza, turno.paciente, turno.doctor, turno)">
+          Guardar Encuesta
+        </button>
+        <button class="btn btn-secondary btn-sm ms-2" (click)="ocultarFormularioEncuesta(turno)">Cancelar</button>
+
+      </div>
+
+      <div *ngIf="turno.mostrarFormularioCancelar" class="mt-3 p-3 bg-light border rounded">
+        <h5 class="text-secondary">Ingresar Calificación:</h5>
+        <div class="mb-3">
+          <label for="alturaInput" class="form-label">Comentario:</label>
+          <input type="text" id="alturaInput" [(ngModel)]="turno.mensaje" class="form-control" />
+        </div>
+
+        <button class="btn btn-success btn-sm" (click)="ingresarMensajePaciente(turno.mensaje, turno.paciente, turno.horario)">
+          Guardar Calificación
+        </button>
+        <button class="btn btn-secondary btn-sm ms-2" (click)="ocultarFormularioCalificar(turno)">Cancelar</button>
+
+      </div>
+
+      <!-- Formulario de Historia Clínica -->
+      <div *ngIf="turno.mostrarFormularioCalificar" class="mt-3 p-3 bg-light border rounded">
+        <h5 class="text-secondary">Ingresar Calificación:</h5>
+        <div class="mb-3">
+          <label for="alturaInput" class="form-label">Comentario:</label>
+          <input type="text" id="alturaInput" [(ngModel)]="turno.Comentario" class="form-control" />
+        </div>
+
+        <button class="btn btn-success btn-sm" (click)="ingresarCalificacion(turno.Comentario, turno.paciente)">
+          Guardar Calificación
+        </button>
+        <button class="btn btn-secondary btn-sm ms-2" (click)="ocultarFormularioCalificar(turno)">Cancelar</button>
+
+      </div>
+    </li>
+  </ul>
+
+  <!-- Si no hay turnos disponibles para el usuario -->
+  <div *ngIf="nombresEspecialistasArray.length === 0" class="alert">
+    <strong>¡Atención!</strong> No tienes turnos disponibles.
+  </div>
+</div>

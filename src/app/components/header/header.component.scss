@@ -1,0 +1,41 @@
+/* Menú desplegable */
+.nav-item .dropdown-menu {
+    display: none;  /* Inicialmente oculto */
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Mostrar el menú cuando se activa */
+  .nav-item .dropdown-menu.show {
+    display: block;
+  }
+  
+  .nav-item .dropdown-menu a {
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    
+  }
+  
+  .nav-item .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .nav-item, .a 
+  {
+    cursor: pointer;
+  }
+
+  .nav-item:hover
+  {
+    color: black;
+  }
+
+
+  

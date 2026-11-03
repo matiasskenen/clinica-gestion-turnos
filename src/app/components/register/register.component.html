@@ -1,0 +1,248 @@
+<body>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-center">Registro {{ rol }}</h2>
+
+        <div class="container d-flex justify-content-center align-items-center vh-50" *ngIf="eleccion == false">
+          <div class="row text-center">
+            <!-- Botón Paciente --> 
+            <div class="col-6 mb-3 d-flex justify-content-center">
+              <button class="role-btn d-flex flex-column align-items-center" (click)="onRoleChange('paciente')">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/tplabo4final.firebasestorage.app/o/pacientelogo.png?alt=media&token=7f50f010-a333-4edd-9485-828f58cb6393"
+                  alt="Paciente" class="img-fluid rounded-circle" />
+                <p class="mt-2 text-primary fw-bold">Paciente</p>
+              </button>
+            </div>
+            <!-- Botón Especialista -->
+            <div class="col-6 mb-3 d-flex justify-content-center">
+              <button class="role-btn d-flex flex-column align-items-center" (click)="onRoleChange('especialista')">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/tplabo4final.firebasestorage.app/o/especialistalogo.png?alt=media&token=a106d99d-90a7-4fa2-81ae-9356436cf7f0"
+                  alt="Especialista" class="img-fluid rounded-circle" />
+                <p class="mt-2 text-primary fw-bold">Especialista</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <form id="registerForm" [formGroup]="form" *ngIf="eleccion == true">
+          <!-- Registro-->
+          <div class="container mt-5">
+            <div class="card">
+              <div class="card-body">
+                <!-- Nombre -->
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="nombre" formControlName="nombre" required />
+                  <ng-container *ngIf="
+                    form.get('nombre')?.hasError('pattern') &&
+                    form.get('nombre')?.touched
+                  ">
+                    <small class="text-danger">El nombre solo puede contener letras</small>
+                  </ng-container>
+                  <ng-container *ngIf="
+                    form.get('nombre')?.hasError('required') &&
+                    form.get('nombre')?.touched
+                  ">
+                    <small class="text-danger">El nombre es requerido</small>
+                  </ng-container>
+                </div>
+
+                <!-- Apellido -->
+                <div class="mb-3">
+                  <label for="apellido" class="form-label">Apellido:</label>
+                  <input type="text" class="form-control" id="apellido" formControlName="apellido" required />
+                  <ng-container *ngIf="
+                    form.get('apellido')?.hasError('pattern') &&
+                    form.get('apellido')?.touched
+                  ">
+                    <small class="text-danger">El apellido solo puede contener letras</small>
+                  </ng-container>
+                  <ng-container *ngIf="
+                    form.get('apellido')?.hasError('required') &&
+                    form.get('apellido')?.touched
+                  ">
+                    <small class="text-danger">El apellido es requerido</small>
+                  </ng-container>
+                </div>
+
+                <!-- Edad -->
+                <div class="mb-3 col-md-6">
+                  <label for="edad" class="form-label">Edad:</label>
+                  <input type="number" class="form-control" id="edad" formControlName="edad" required />
+                  <ng-container *ngIf="
+                    form.get('edad')?.hasError('max') &&
+                    form.get('edad')?.touched
+                  ">
+                    <small class="text-danger">Debe ser menor de 99</small>
+                  </ng-container>
+                  <ng-container *ngIf="
+                    form.get('edad')?.hasError('required') &&
+                    form.get('edad')?.touched
+                  ">
+                    <small class="text-danger">La edad es requerida</small>
+                  </ng-container>
+                </div>
+
+                <!-- DNI -->
+                <div class="mb-3 col-md-6">
+                  <label for="dni" class="form-label">Número de DNI:</label>
+                  <input type="text" class="form-control" id="dni" formControlName="dni" required />
+                  <ng-container *ngIf="
+                    form.get('dni')?.hasError('pattern') &&
+                    form.get('dni')?.touched
+                  ">
+                    <small class="text-danger">Debe contener solo números</small>
+                  </ng-container>
+                  <ng-container *ngIf="
+                    form.get('dni')?.hasError('maxlength') &&
+                    form.get('dni')?.touched
+                  ">
+                    <small class="text-danger">No debe superar los 10 caracteres</small>
+                  </ng-container>
+                  <ng-container *ngIf="
+                    form.get('dni')?.hasError('required') &&
+                    form.get('dni')?.touched
+                  ">
+                    <small class="text-danger">El DNI es requerido</small>
+                  </ng-container>
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div class="mb-3">
+                  <label for="mail" class="form-label">Correo Electrónico:</label>
+                  <input type="text" class="form-control" id="mail" formControlName="mail" required />
+                  <ng-container *ngIf="
+                    form.get('mail')?.hasError('pattern') &&
+                    form.get('mail')?.touched
+                  ">
+                    <small class="text-danger">El correo electrónico es inválido</small>
+                  </ng-container>
+                  <ng-container *ngIf="
+                    form.get('mail')?.hasError('required') &&
+                    form.get('mail')?.touched
+                  ">
+                    <small class="text-danger">El correo electrónico es requerido</small>
+                  </ng-container>
+                </div>
+
+                <!-- Clave -->
+                <div class="mb-3">
+                  <label for="clave" class="form-label">Clave:</label>
+                  <input type="password" class="form-control" id="clave" formControlName="clave" required />
+                  <ng-container *ngIf="
+                    form.get('clave')?.hasError('minlength') &&
+                    form.get('clave')?.touched
+                  ">
+                    <small class="text-danger">La clave debe tener al menos 6 caracteres</small>
+                  </ng-container>
+                  <ng-container *ngIf="
+                    form.get('clave')?.hasError('required') &&
+                    form.get('clave')?.touched
+                  ">
+                    <small class="text-danger">La clave es requerida</small>
+                  </ng-container>
+                </div>
+
+                <!-- SUBIR IMAGEN -->
+
+                <div>
+                  <label for="imagen1">Selecciona la primera imagen:</label>
+                  <input type="file" id="imagen1" (change)="onFileSelected($event, 'imagen1')" accept="image/*">
+                </div>
+                <br>
+                <div *ngIf="rol == 'paciente'">
+                  <label for="imagen2">Selecciona la segunda imagen:</label>
+                  <input type="file" id="imagen2" (change)="onFileSelected($event, 'imagen2')" accept="image/*">
+                </div>
+                <br>
+
+
+                <!-- Registro Cliente -->
+                <div *ngIf="rol === 'paciente'">
+                  <div class="mb-3">
+                    <label for="obrasocial" class="form-label">Obra Social:</label>
+                    <input type="text" class="form-control" id="obrasocial" formControlName="obrasocial" />
+                    <ng-container *ngIf="
+                      form.get('obrasocial')?.hasError('pattern') &&
+                      form.get('obrasocial')?.touched
+                    ">
+                      <small class="text-danger">La obra social solo puede contener letras</small>
+                    </ng-container>
+                    <ng-container *ngIf="
+                      form.get('obrasocial')?.hasError('required') &&
+                      form.get('obrasocial')?.touched
+                    ">
+                      <small class="text-danger">La obra social es requerida</small>
+                    </ng-container>
+                  </div>
+                </div>
+
+                <!-- specialties.component.html -->
+                <div class="container mt-5" *ngIf="rol == 'especialista'">
+                  <h1 class="text-center mb-2">
+                    Seleccione Especialidades Clínicas
+                  </h1>
+                  <div>
+                    <!-- Opciones de Especialidades -->
+                    <div class="form-check" *ngFor="let especialidad of especialidades">
+                      <input class="form-check-input" type="checkbox" [value]="especialidad" [id]="especialidad"
+                        [(ngModel)]="especialidadesSeleccionadas[especialidad]" [ngModelOptions]="{ standalone: true }" />
+                      <label class="form-check-label" [for]="especialidad">{{ especialidad }}</label>
+                    </div>
+
+                    <!-- Botón para activar el campo de "Otra especialidad" -->
+                    <button *ngIf="!OTRAespecialidad" type="button" class="btn btn-secondary mt-2" (click)="cambiarOtra()">
+                      Otra especialidad
+                    </button>
+
+                    <!-- Campo para escribir si "Otra" es seleccionada -->
+                    <div *ngIf="OTRAespecialidad" class="form-group mt-3">
+                      <label for="otraEspecialidad">Especifique otra especialidad:</label>
+                      <input type="text" class="form-control" id="otraEspecialidad" [(ngModel)]="otraEspecialidad"
+                        [ngModelOptions]="{ standalone: true }" placeholder="Ingrese su especialidad" />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <br />
+          <br />
+
+          <div class="captcha-container">
+            <div class="captcha-box">
+              <p class="captcha-text">{{ captchaCode }}</p>
+              <button type="button" (click)="generateCaptcha()">🔄</button>
+            </div>
+            <input formControlName="captchaInput" placeholder="Ingrese el texto del CAPTCHA" />
+            <button type="button" (click)="verifyCaptcha()">Verificar</button>
+            <p *ngIf="captchaVerified === true" class="success">✔️ CAPTCHA Correcto</p>
+            <p *ngIf="captchaVerified === false" class="error">❌ CAPTCHA Incorrecto</p>
+          </div>
+
+          <br />
+          <br />
+
+          <!-- Botón Enviar -->
+          <button type="submit" [disabled]="!habilitado" class="btn btn-primary w-100" (click)="enviar()">
+            Enviar
+          </button>
+
+          <!-- Mensaje de error -->
+          <div *ngIf="flagError == true" class="alert alert-danger mt-3" role="alert">
+            {{ resultado }}
+          </div>
+          <div *ngIf="flagSuccess == true" class="alert alert-success mt-3" role="alert">
+            {{ resultado }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

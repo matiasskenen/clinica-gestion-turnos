@@ -1,0 +1,97 @@
+<section class="wrapper">
+
+  <div class="custom-container">
+
+    <div class="text-center mb-5">
+
+
+      <p class="lead-title">Solicitar Nuevo Turno</p>
+    </div>
+
+    <!-- Tarjetas de Especialistas -->
+    <div class="custom-row" *ngIf="!eleccion">
+      <div class="card-wrapper" *ngFor="let especialista of nombresEspecialistasArray">
+        <div class="custom-card"
+          [style.backgroundImage]="'url(' + especialista.imagen + ')'"
+          (click)="seleccionarEspecialista(especialista)">
+          <div class="card-overlay">
+            <h6>{{ especialista.nombre }}</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón Volver -->
+      <div class="text-center mt-3">
+        <button class="custom-btn" (click)="volverhome()">Volver</button>
+      </div>
+    </div>
+
+      <!-- Tarjetas de Especialidades -->
+      <div class="custom-row" *ngIf="eleccion2">
+        <div *ngIf="imagenesEspecilistasArray.length === 0; else cardsNotEmpty">
+          <p>No se encontraron especialidades.</p>
+        </div>
+
+        <ng-template #cardsNotEmpty>
+          <div class="especialidad-wrapper" *ngFor="let especialidad of imagenesEspecilistasArray">
+            <div class="especialidades-card">
+              <p>{{especialidad.especialidad1}}</p>
+              <div class="customes-card"
+                [style.backgroundImage]="'url(' + especialidad.imgurl1 + ')'"
+                (click)="seleccionarEspecialidad(especialidad.especialidad1)"></div>
+            </div>
+            <div class="especialidades-card" *ngIf="especialidad.especialidad2 != 'No especificada'">
+              <p>{{especialidad.especialidad2}}</p>
+              <div class="customes-card"
+                [style.backgroundImage]="'url(' + especialidad.imgurl2 + ')'"
+                (click)="seleccionarEspecialidad(especialidad.especialidad2)"></div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+        <!-- Resumen y Confirmación -->
+
+        <div *ngIf="turnoSeleccionado" class="text-resultado mt-5">
+          <h3 class="text-success">¡Turno Seleccionado!</h3>
+          <p>Profesional: <strong>{{ especialista.nombre }}</strong></p>
+          <p>Especialidad: <strong>{{ especialidadSeleccionada }}</strong></p>
+          <p>Fecha y Hora: <strong>{{ turnoSeleccionado}}</strong></p>
+          <p>Dia: <strong>{{ fechaSeleccionada | date: 'dd/MM/yyyy' }}</strong></p>
+
+
+          <button class="custom-btn-confirm" (click)="confirmarturno()">Solicitar Turno</button>
+        </div>
+        <br>
+        <br>
+
+    <!-- Seleccionar Fecha -->
+    <div *ngIf="especialidadSeleccionada && !turnoSeleccionado" class="text-center">
+      <h3>Selecciona una Fecha</h3>
+      <div class="d-flex justify-content-center align-items-center">
+        <button class="btn custom-btn" (click)="cambiarFecha(-1)">&#8592;</button>
+        <div class="mx-3">
+
+        </div>
+        <button class="btn custom-btn" (click)="cambiarFecha(1)">&#8594;</button>
+      </div>
+    </div>
+    
+
+    <!-- Seleccionar Turno -->
+    <div *ngIf="especialidadSeleccionada && turnosDisponibles.length > 0">
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let turno of turnosDisponibles">
+          <button  class="btn custom-btn w-100" (click)="seleccionarTurno(turno)">
+            <span>{{ fechaSeleccionada | date: 'dd/MM/yyyy' }}</span>
+            {{ turno }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    
+  </div>
+</section>

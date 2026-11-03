@@ -1,0 +1,27 @@
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="title">Gestión de Turnos</h1>
+    </header>
+
+    <!-- Botones de navegación -->
+    <nav class="navbar">
+      <div class="button-container">
+        <button class="custom-btn primary-btn" (click)="navigateTo('misturnos')">Mis Turnos</button>
+        <button class="custom-btn success-btn" (click)="navigateTo('solicitarturno')">Solicitar Turno</button>
+      </div>
+    </nav>
+
+    <!-- Información adicional de la sección -->
+    <section class="info-section">
+      <h2>¿Cómo solicitar un turno?</h2>
+      <p>Para solicitar un turno, haga clic en el botón "Solicitar Turno" y elija el especialista y la fecha que más le convengan.</p>
+      <p>Si ya tiene turnos previos, puede verlos haciendo clic en "Mis Turnos".</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Clínica Skenen. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body>

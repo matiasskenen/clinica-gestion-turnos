@@ -1,0 +1,129 @@
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://example.com/fondo-clinica.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px; /* Bordes redondeados para suavizar el diseño */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Títulos */
+  h2, h1 {
+    font-size: 2.5rem;
+    color: #0275d8;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo de imagen de perfil */
+  .profile-image-container {
+    text-align: center;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #0275d8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo de la tarjeta de perfil */
+  .profile-info {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .list-group-item {
+    font-size: 1.1rem;
+    padding: 12px;
+    border: none;
+  }
+  
+  .list-group-item strong {
+    color: #0275d8;
+  }
+  
+  /* Botón de descarga */
+  .btn-download {
+    background-color: #0275d8;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-download:hover {
+    background-color: #01579b;
+  }
+  
+  /* Estilo de la tabla */
+  .table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #0275d8;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .table td {
+    background-color: #f9f9f9;
+  }
+  
+  .table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .patient-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0275d8;
+  }
+  
+  /* Mejora de la tabla responsive */
+  .table-responsive {
+    margin-top: 20px;
+    overflow-x: auto;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  

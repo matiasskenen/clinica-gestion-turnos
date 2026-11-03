@@ -1,0 +1,70 @@
+<div class="container mt-5">
+  <!-- Mi Perfil -->
+  <div class="text-center mb-5">
+    <h2 class="display-4">Mi Perfil</h2>
+  </div>
+
+  <!-- Captcha Section -->
+  <div class="captcha-section mb-4">
+    <div class="form-group">
+      <label for="captcha" class="form-label">Captcha</label>
+      <input
+        type="text"
+        id="captcha"
+        class="form-control"
+        name="captcha"
+        ngModel
+        appCaptcha
+        [disabledCaptcha]="disableCaptcha"
+        (captchaValidated)="handleCaptchaValidation($event)"
+        required
+      />
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <button type="submit" class="btn btn-success" [disabled]="!captchaValid">Enviar</button>
+      <button type="button" class="btn btn-secondary" (click)="toggleCaptcha()">
+        {{ disableCaptcha ? 'Habilitar Captcha' : 'Deshabilitar Captcha' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Información Personal -->
+  <div *ngFor="let turno of nombresEspecialistasArray" class="mb-5">
+    <ng-container *ngIf="turno.email == pacienteActual">
+      <div class="text-center">
+        <img
+          src="{{ turno.imagen }}"
+          class="img-thumbnail profile-image mb-4"
+          alt="Imagen de perfil"
+        />
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-center text-primary">Información Personal</h5>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <strong>Nombre:</strong> {{ turno.nombre }}
+                </li>
+                <li class="list-group-item">
+                  <strong>Apellido:</strong> {{ turno.apellido }}
+                </li>
+                <li class="list-group-item">
+                  <strong>Edad:</strong> {{ turno.edad }}
+                </li>
+                <li class="list-group-item">
+                  <strong>DNI:</strong> {{ turno.dni }}
+                </li>
+              </ul>
+              <div class="text-center mt-4">
+                <button class="btn btn-primary" (click)="ddescargarHistoriaClinica()">Descargar PDF Usuarios</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
